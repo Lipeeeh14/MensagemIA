@@ -332,11 +332,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projetos\\Meus projetos\\MensagemIA\\MensagemIA\\MensagemIA\\ProducerMensagemIA.csproj",
+      "projectUniqueName": "C:\\Projetos\\Meus projetos\\MensagemIA\\MensagemIA\\ProducerMensagemIA\\ProducerMensagemIA\\ProducerMensagemIA.csproj",
       "projectName": "ProducerMensagemIA",
-      "projectPath": "C:\\Projetos\\Meus projetos\\MensagemIA\\MensagemIA\\MensagemIA\\ProducerMensagemIA.csproj",
+      "projectPath": "C:\\Projetos\\Meus projetos\\MensagemIA\\MensagemIA\\ProducerMensagemIA\\ProducerMensagemIA\\ProducerMensagemIA.csproj",
       "packagesPath": "C:\\Users\\Lipe\\.nuget\\packages\\",
-      "outputPath": "C:\\Projetos\\Meus projetos\\MensagemIA\\MensagemIA\\MensagemIA\\obj\\",
+      "outputPath": "C:\\Projetos\\Meus projetos\\MensagemIA\\MensagemIA\\ProducerMensagemIA\\ProducerMensagemIA\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Lipe\\AppData\\Roaming\\NuGet\\NuGet.Config",

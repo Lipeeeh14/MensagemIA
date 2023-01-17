@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projetos\\Meus projetos\\MensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA.csproj": {}
+    "C:\\Projetos\\Meus projetos\\MensagemIA\\MensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA.csproj": {}
   },
   "projects": {
-    "C:\\Projetos\\Meus projetos\\MensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA.csproj": {
+    "C:\\Projetos\\Meus projetos\\MensagemIA\\MensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\Meus projetos\\MensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA.csproj",
+        "projectUniqueName": "C:\\Projetos\\Meus projetos\\MensagemIA\\MensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA.csproj",
         "projectName": "ConsumerMensagemIA",
-        "projectPath": "C:\\Projetos\\Meus projetos\\MensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA.csproj",
+        "projectPath": "C:\\Projetos\\Meus projetos\\MensagemIA\\MensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA.csproj",
         "packagesPath": "C:\\Users\\Lipe\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\Meus projetos\\MensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA\\obj\\",
+        "outputPath": "C:\\Projetos\\Meus projetos\\MensagemIA\\MensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lipe\\AppData\\Roaming\\NuGet\\NuGet.Config",
