@@ -22,7 +22,7 @@ namespace ProducerMensagemIA.Controllers
 			{
 				_mensagemService.SendMessage(mensagemDTO);
 
-				return Ok("Mensagem enviada com sucesso!");
+				return Accepted("Mensagem enviada com sucesso!");
 			}
 			catch (Exception ex)
 			{

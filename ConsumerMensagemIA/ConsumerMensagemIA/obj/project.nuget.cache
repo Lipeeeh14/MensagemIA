@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Ak0oIWI/QikV1gJSxFXPJgYXg2FZHF8PBnY+RPoVGBG2ZtARJk+IxAUcjjqxmcCw4DK6+bv1Sq2BZlM8xzL3Sg==",
+  "dgSpecHash": "z/bZWoZrauqEjscn76KYhFWODWXoFxlisktrOIt0MVCVY1ax9QLvlLGKxmWgf3BFbhdr5CycLHIuNmCO51FI5w==",
   "success": true,
   "projectFilePath": "C:\\Projetos\\Meus projetos\\MensagemIA\\MensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA\\ConsumerMensagemIA.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Lipe\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
     "C:\\Users\\Lipe\\.nuget\\packages\\rabbitmq.client\\6.4.0\\rabbitmq.client.6.4.0.nupkg.sha512",
     "C:\\Users\\Lipe\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\Lipe\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"

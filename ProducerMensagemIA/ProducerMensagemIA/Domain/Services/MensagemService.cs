@@ -10,16 +10,13 @@ namespace ProducerMensagemIA.Domain.Services
 	public class MensagemService : IMensagemService
 	{
 		private readonly ConnectionFactory _factory;
-		private readonly string _queueName;
+		private readonly string QUEUE_NAME = "message";
 
-		public MensagemService(IConfiguration configuration)
+		public MensagemService()
 		{
-			var settings = configuration.GetSection("RabbitMQ");
-			_queueName = settings["QueueName"];
-
 			_factory = new ConnectionFactory
 			{
-				HostName = settings["HostName"],
+				HostName = "localhost",
 			};
 		}
 
@@ -31,7 +28,7 @@ namespace ProducerMensagemIA.Domain.Services
 			
 			using var channel = connection.CreateModel();
 			channel.QueueDeclare(
-					queue: _queueName,
+					queue: QUEUE_NAME,
 					durable: false,
 					exclusive: false,
 					autoDelete: false,
@@ -43,7 +40,7 @@ namespace ProducerMensagemIA.Domain.Services
 
 			channel.BasicPublish(
 					exchange: "",
-					routingKey: _queueName,
+					routingKey: QUEUE_NAME,
 					basicProperties: null,
 					body: body
 				);

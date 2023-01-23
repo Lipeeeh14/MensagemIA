@@ -1,6 +1,7 @@
 ﻿using ConsumerMensagemIA.DomainReceiver.Models;
 using ConsumerMensagemIA.DomainReceiver.Services.Interfaces;
 using ConsumerMensagemIA.Integration.Facades.Interfaces;
+using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
@@ -11,50 +12,49 @@ namespace ConsumerMensagemIA.DomainReceiver.Services
 	public class MensagemService : IMensagemService
 	{
 		private readonly ConnectionFactory _factory;
-		private readonly string _queueName;
+		private readonly IConnection _connection;
+		private readonly IModel _channel;
+		private readonly string QUEUE_NAME = "message";
 
 		private IEmailFacade _emailFacade;
 
 		public MensagemService(IEmailFacade emailFacade)
 		{
-			_queueName = "message";
-
 			_factory = new ConnectionFactory 
 			{
 				HostName = "localhost",
 			};
 
-			_emailFacade = emailFacade; 
+			_emailFacade = emailFacade;
+
+			_connection = _factory.CreateConnection();
+			_channel = _connection.CreateModel();
+			_channel.QueueDeclare(
+				queue: QUEUE_NAME,
+				durable: false,
+				exclusive: false,
+				autoDelete: false,
+				arguments: null);
 		}
 
-		public void GetMessage()
+		public Task ConsumeMessage()
 		{
-			using (var connection = _factory.CreateConnection())
+			var consumer = new EventingBasicConsumer(_channel);
 
-			using (var channel = connection.CreateModel()) 
+			consumer.Received += (sender, args) =>
 			{
-				channel.QueueDeclare(queue: _queueName,
-					durable: false,
-					exclusive: false,
-					autoDelete: false,
-					arguments: null);
+				var contentArray = args.Body.ToArray();
+				var contentString = Encoding.UTF8.GetString(contentArray);
+				var message = JsonConvert.DeserializeObject<Mensagem>(contentString);
 
-				var consumer = new EventingBasicConsumer(channel);
+				_emailFacade.SendEmail(message);
 
-				var result = new Mensagem();
-				consumer.Received += (model, ea) =>
-				{
-					var body = ea.Body.ToArray();
-					var message = Encoding.UTF8.GetString(body);
-					result = JsonSerializer.Deserialize<Mensagem>(message);
-				};
+				_channel.BasicAck(args.DeliveryTag, false);
+			};
 
-				channel.BasicConsume(queue: _queueName,
-									autoAck: true,
-									consumer: consumer);
+			_channel.BasicConsume(QUEUE_NAME, false, consumer);
 
-				_ = _emailFacade.SendEmail(result);
-			}
+			return Task.CompletedTask;
 		}
 	}
 }
